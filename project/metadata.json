@@ -1,0 +1,6 @@
+{
+  "name": "Bin Kalilah Al-Aamri Catalog & B2B Portal",
+  "description": "Bilingual (Arabic/English) digital catalog and B2B ordering platform for Bin Kalilah Al-Aamri Trading & Investment Co. LLC",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

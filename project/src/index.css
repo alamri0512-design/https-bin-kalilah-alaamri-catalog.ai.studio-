@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Readex+Pro:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+:root {
+  font-family: 'Tajawal', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Theme CSS Variables - Light Theme (Default) */
+  --bg-app: #f8fafc;
+  --bg-header: rgba(255, 255, 255, 0.85);
+  --bg-topbar: #0f172a;
+  --bg-nav: rgba(248, 250, 252, 0.85);
+  --bg-card: rgba(255, 255, 255, 0.82);
+  --bg-input: rgba(248, 250, 252, 0.9);
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-header: #0f172a;
+  --border-color: rgba(226, 232, 240, 0.8);
+  --btn-control-bg: #f1f5f9;
+  --btn-control-border: #cbd5e1;
+}
+
+[data-theme="dark"] {
+  /* Theme CSS Variables - Dark Theme */
+  --bg-app: #060d18;
+  --bg-header: rgba(10, 22, 40, 0.85);
+  --bg-topbar: #060d18;
+  --bg-nav: rgba(8, 18, 32, 0.85);
+  --bg-card: rgba(13, 27, 46, 0.82);
+  --bg-input: rgba(19, 35, 58, 0.9);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-header: #ffffff;
+  --border-color: rgba(30, 41, 59, 0.8);
+  --btn-control-bg: #1e293b;
+  --btn-control-border: #334155;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes slideInBR {
+  0% {
+    opacity: 0;
+    transform: translate(35px, 35px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes rippleEffect {
+  0% {
+    transform: scale(0);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+.animate-ripple {
+  animation: rippleEffect 0.6s ease-out forwards;
+}
+
+.animate-slide-in-br {
+  animation: slideInBR 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 25s linear infinite;
+}
+
+/* Custom scrollbar for tabs */
+.scrollbar-thin::-webkit-scrollbar {
+  height: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #060d18;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #c9a84c;
+  border-radius: 4px;
+}
