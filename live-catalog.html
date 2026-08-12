@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بن كليلة العامري - الكتالوج الرقمي الحي</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* الرأس الثابت */
+        header {
+            background: linear-gradient(135deg, #0a2f5a 0%, #1a4f8a 100%);
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: #FFD700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #0a2f5a;
+        }
+
+        .company-name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .tagline {
+            font-size: 11px;
+            opacity: 0.9;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .btn-header {
+            background: rgba(255,255,255,0.2);
+            border: 2px solid white;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-header:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+
+        .btn-whatsapp {
+            background: #25D366 !important;
+            border: none !important;
+        }
+
+        .btn-whatsapp:hover {
+            background: #1ba854 !important;
+        }
+
+        /* البطل */
+        .hero {
+            background: linear-gradient(135deg, #0a2f5a 0%, #1a4f8a 100%);
+            color: white;
+            padding: 80px 30px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.95;
+            margin-bottom: 30px;
+        }
+
+        .btn-primary {
+            background: #FFD700;
+            color: #0a2f5a;
+            border: none;
+            padding: 15px 40px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary:hover {
+            background: #FFC700;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+        }
+
+        /* الحاوية الرئيسية */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            color: #0a2f5a;
+            margin-bottom: 40px;
+            text-align: center;
+            border-bottom: 4px solid #FFD700;
+            padding-bottom: 15px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #FFD700, transparent);
+        }
+
+        /* شبكة المنتجات */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid #e0e0e0;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+            border-color: #FFD700;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 240px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: #0a2f5a;
+            margin-bottom: 8px;
+        }
+
+        .product-name-en {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+
+        .product-desc {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .product-specs {
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 15px;
+            padding: 12px;
+            background: #f5f5f5;
+            border-radius: 6px;
+            border-left: 3px solid #FFD700;
+        }
+
+        .product-specs strong {
+            color: #0a2f5a;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 2px solid #f0f0f0;
+            padding-top: 15px;
+            gap: 10px;
+        }
+
+        .product-price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFD700;
+        }
+
+        .product-price-small {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .btn-add {
+            background: linear-gradient(135deg, #0a2f5a 0%, #1a4f8a 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .btn-add:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(10, 47, 90, 0.3);
+        }
+
+        /* قسم الطلب */
+        .order-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            border-top: 4px solid #FFD700;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            color: #0a2f5a;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: 'Tajawal', Arial, sans-serif;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #FFD700;
+            box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .range-slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #e0e0e0;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #FFD700;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .range-slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #FFD700;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .tonnage-display {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 12px;
+            padding: 15px;
+            background: #f0f8ff;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+        }
+
+        .tonnage-value {
+            font-size: 16px;
+            font-weight: bold;
+            color: #0a2f5a;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: linear-gradient(135deg, #0a2f5a 0%, #1a4f8a 100%);
+            color: white;
+            border: none;
+            padding: 18px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+        }
+
+        /* قسم الاتصال */
+        .contact-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .contact-card h3 {
+            color: #0a2f5a;
+            margin-bottom: 10px;
+        }
+
+        .contact-card p {
+            color: #666;
+        }
+
+        /* التذييل */
+        footer {
+            background: #0a2f5a;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* رسالة النجاح */
+        .success-alert {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 2px solid #c3e6cb;
+            display: none;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .success-alert.show {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .hero {
+                padding: 40px 20px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .order-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الرأس -->
+    <header>
+        <div class="logo-section">
+            <div class="logo-icon">BK</div>
+            <div>
+                <div class="company-name">بن كليلة العامري</div>
+                <div class="tagline">Bin Kalilah Al-Aamri</div>
+            </div>
+        </div>
+        <div class="header-actions">
+            <button class="btn-header" onclick="toggleLanguage()">EN | عربي</button>
+            <a href="https://wa.me/96899088000" target="_blank" class="btn-header btn-whatsapp">💬 واتساب مباشر</a>
+        </div>
+    </header>
+
+    <!-- القسم الرئيسي -->
+    <section class="hero">
+        <h1>🌍 جودة عمانية عالمية</h1>
+        <p>منتجات غذائية متميزة • أسعار منافسة • خدمة فائقة • شحن آمن</p>
+        <button class="btn-primary" onclick="document.getElementById('catalog').scrollIntoView({behavior: 'smooth'})">
+            📦 عرض الكتالوج الآن
+        </button>
+    </section>
+
+    <!-- الكتالوج -->
+    <div class="container" id="catalog">
+        <h2 class="section-title">📋 الكتالوج الكامل</h2>
+        <div class="products-grid" id="productsContainer"></div>
+    </div>
+
+    <!-- الطلب -->
+    <div class="container">
+        <h2 class="section-title">📝 نموذج الطلب</h2>
+        <div class="order-section">
+            <div class="success-alert" id="successAlert">
+                ✅ تم إرسال طلبك بنجاح! سيتواصل معك الفريق قريباً عبر واتساب
+            </div>
+
+            <div class="form-grid">
+                <div class="form-group full-width">
+                    <label>اختر الحمولة المطلوبة (طن متري)</label>
+                    <input type="range" class="range-slider" id="tonnageSlider" min="1" max="5000" value="250" onchange="updateTonnage()" oninput="updateTonnage()">
+                    <div class="tonnage-display">
+                        <span class="tonnage-value">الحمولة: <span id="tonnageValue">250</span> طن</span>
+                        <span class="tonnage-value">الحاويات: <span id="containerValue">11</span> حاوية (20 قدم)</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>🏢 اسم الشركة</label>
+                    <input type="text" id="companyName" placeholder="أدخل اسم شركتك">
+                </div>
+
+                <div class="form-group">
+                    <label>☎️ رقم الاتصال</label>
+                    <input type="tel" id="phoneNumber" placeholder="+968 ...">
+                </div>
+
+                <div class="form-group">
+                    <label>📧 البريد الإلكتروني</label>
+                    <input type="email" id="email" placeholder="your@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label>📦 نوع المنتج المطلوب</label>
+                    <select id="productType">
+                        <option value="">-- اختر المنتج --</option>
+                        <option value="دقيق الخريف">🌾 دقيق الخريف</option>
+                        <option value="سكر الخريف">🍬 سكر الخريف</option>
+                        <option value="باستا سباغيتي">🍝 باستا سباغيتي</option>
+                        <option value="حليب مجفف">🥛 حليب مجفف</option>
+                        <option value="طلب مختلط">📦 طلب مختلط (أكثر من منتج)</option>
+                    </select>
+                </div>
+
+                <div class="form-group full-width">
+                    <label>💬 ملاحظات خاصة أو متطلبات</label>
+                    <textarea id="notes" placeholder="مثلاً: شهادات معينة، تعبئة خاصة، تسليم سريع..." rows="4"></textarea>
+                </div>
+
+                <button class="btn-submit full-width" onclick="submitOrder()">
+                    📤 إرسال الطلب عبر واتساب الآن
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- التواصل -->
+    <div class="container">
+        <h2 class="section-title">📞 تواصل معنا</h2>
+        <div class="contact-section">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>☎️ الهاتف</h3>
+                    <p><strong>+968 990 88000</strong></p>
+                </div>
+                <div class="contact-card">
+                    <h3>📧 البريد</h3>
+                    <p><strong>contact@binkalilah.om</strong></p>
+                </div>
+                <div class="contact-card">
+                    <h3>📍 الموقع</h3>
+                    <p><strong>مسقط، سلطنة عمان</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- التذييل -->
+    <footer>
+        <p>© 2024 بن كليلة العامري - جميع الحقوق محفوظة</p>
+        <p style="font-size: 12px; opacity: 0.9;">للطلبات والاستفسارات: +968 990 88000 | واتساب مباشر</p>
+    </footer>
+
+    <script>
+        const products = [
+            {
+                emoji: '🌾',
+                nameAr: 'دقيق الخريف رقم 1',
+                nameEn: 'Al-Khareef Flour No.1',
+                descAr: 'دقيق عماني فاخر جداً - 100% قمح قاسي',
+                descEn: 'Premium Omani flour - 100% durum wheat',
+                price: '0.245',
+                weight: '25 كيلوغرام',
+                specs: ['✓ 100% قمح قاسي عالي الجودة', '✓ شهادة حلال معتمدة', '✓ معايير جودة دولية']
+            },
+            {
+                emoji: '🍬',
+                nameAr: 'سكر الخريف الأبيض',
+                nameEn: 'Al-Khareef White Sugar',
+                descAr: 'سكر مكرر ICUMSA 45 - أعلى درجات النقاء',
+                descEn: 'Refined sugar ICUMSA 45 - Premium purity',
+                price: '0.310',
+                weight: '25 كيلوغرام',
+                specs: ['✓ نقاء 99.9% مضمون', '✓ معايير عالمية محترمة', '✓ تعبئة آمنة وصحية']
+            },
+            {
+                emoji: '🍝',
+                nameAr: 'باستا سباغيتي',
+                nameEn: 'Spaghetti Pasta',
+                descAr: 'معكرونة إيطالية أصلية - طعم استثنائي',
+                descEn: 'Authentic Italian pasta - Exceptional taste',
+                price: '0.185',
+                weight: '5 كيلوغرام',
+                specs: ['✓ قمح صلب إيطالي 100%', '✓ بدون إضافات أو ملونات', '✓ حاصلة على معايير دولية عالية']
+            },
+            {
+                emoji: '🥛',
+                nameAr: 'حليب مجفف كامل الدسم',
+                nameEn: 'Full-Cream Milk Powder',
+                descAr: 'حليب عالي الجودة - سريع الذوبان جداً',
+                descEn: 'Premium milk powder - Quick dissolving',
+                price: '1.450',
+                weight: '25 كيلوغرام',
+                specs: ['✓ حليب طبيعي كامل الدسم', '✓ سريع الذوبان في الماء البارد', '✓ معايير غذائية عالية جداً']
+            }
+        ];
+
+        function renderProducts() {
+            const container = document.getElementById('productsContainer');
+            container.innerHTML = products.map((p, idx) => `
+                <div class="product-card">
+                    <div class="product-image">${p.emoji}</div>
+                    <div class="product-info">
+                        <div class="product-name">${p.nameAr}</div>
+                        <div class="product-name-en">${p.nameEn}</div>
+                        <div class="product-desc">${p.descAr}</div>
+                        <div class="product-desc" style="font-size: 12px; opacity: 0.7; font-style: italic;">${p.descEn}</div>
+                        <div class="product-specs">
+                            <strong>المواصفات:</strong><br>
+                            ${p.specs.join('<br>')}
+                        </div>
+                        <div class="product-footer">
+                            <div>
+                                <div class="product-price">${p.price} OMR</div>
+                                <div class="product-price-small">${p.weight}</div>
+                            </div>
+                            <button class="btn-add" onclick="addToOrder('${p.nameAr}')">أضف للطلب</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateTonnage() {
+            const val = parseInt(document.getElementById('tonnageSlider').value);
+            document.getElementById('tonnageValue').textContent = val;
+            const containers = Math.ceil(val / 25);
+            document.getElementById('containerValue').textContent = containers;
+        }
+
+        function addToOrder(productName) {
+            const notes = document.getElementById('notes');
+            if (notes.value) {
+                notes.value += '\n• ' + productName;
+            } else {
+                notes.value = '• ' + productName;
+            }
+            alert('✅ تم إضافة ' + productName + ' إلى الطلب!');
+        }
+
+        function submitOrder() {
+            const company = document.getElementById('companyName').value.trim();
+            const phone = document.getElementById('phoneNumber').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const productType = document.getElementById('productType').value;
+            const notes = document.getElementById('notes').value.trim();
+            const tonnage = document.getElementById('tonnageSlider').value;
+            const containers = Math.ceil(tonnage / 25);
+
+            if (!company) {
+                alert('⚠️ من فضلك أدخل اسم الشركة');
+                document.getElementById('companyName').focus();
+                return;
+            }
+            if (!phone) {
+                alert('⚠️ من فضلك أدخل رقم الاتصال');
+                document.getElementById('phoneNumber').focus();
+                return;
+            }
+            if (!productType) {
+                alert('⚠️ من فضلك اختر نوع المنتج');
+                document.getElementById('productType').focus();
+                return;
+            }
+
+            const message = `
+🎯 *طلب جملة جديد من بن كليلة العامري*
+
+👤 *البيانات:*
+• الشركة: ${company}
+• الهاتف: ${phone}
+• البريد: ${email || 'لم يتم إدراجه'}
+
+📦 *تفاصيل الطلب:*
+• المنتج: ${productType}
+• الحمولة: ${tonnage} طن متري
+• عدد الحاويات: ${containers} حاوية (20 قدم)
+
+${notes ? '📝 ملاحظات خاصة:\\n' + notes : ''}
+
+⏰ التاريخ: ${new Date().toLocaleDateString('ar-EG')}
+
+---
+شكراً! نرجو التواصل معنا لتأكيد الطلب والاتفاق على التفاصيل النهائية.
+            `.trim();
+
+            const whatsappUrl = `https://wa.me/96899088000?text=${encodeURIComponent(message)}`;
+
+            // عرض رسالة النجاح
+            const alert = document.getElementById('successAlert');
+            alert.classList.add('show');
+
+            setTimeout(() => {
+                // إعادة تعيين النموذج
+                document.getElementById('companyName').value = '';
+                document.getElementById('phoneNumber').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('productType').value = '';
+                document.getElementById('notes').value = '';
+                document.getElementById('tonnageSlider').value = '250';
+                updateTonnage();
+                alert.classList.remove('show');
+
+                // فتح واتساب
+                window.open(whatsappUrl, '_blank');
+            }, 2000);
+        }
+
+        function toggleLanguage() {
+            const html = document.documentElement;
+            if (html.dir === 'rtl') {
+                html.dir = 'ltr';
+                html.lang = 'en';
+            } else {
+                html.dir = 'rtl';
+                html.lang = 'ar';
+            }
+        }
+
+        // تهيئة الصفحة
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+            updateTonnage();
+        });
+    </script>
+
+</body>
+</html>
