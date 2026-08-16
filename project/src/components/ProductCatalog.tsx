@@ -256,7 +256,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
 
               <div className="w-full md:w-1/2">
                 <div className="inline-block bg-[#0A1628] text-[#C9A84C] px-3 py-1 rounded-full text-xs font-bold mb-2">
-                  100% Halal Certified
+                  {isAr ? 'معتمد 100% حلال' : '100% Halal Certified'}
                 </div>
                 <h3 className="text-xl font-black text-slate-900 mb-2">
                   {isAr ? activeModalProduct.nameAr : activeModalProduct.nameEn}
