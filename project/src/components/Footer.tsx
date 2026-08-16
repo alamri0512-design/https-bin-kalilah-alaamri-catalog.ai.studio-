@@ -1,6 +1,6 @@
 import React from 'react';
 import { Language, SiteSettings } from '../types';
-import { Phone, Mail, MapPin, MessageCircle, Lock, ShieldCheck } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle, Lock, ShieldCheck, ScanLine } from 'lucide-react';
 
 interface FooterProps {
   language: Language;
@@ -110,6 +110,22 @@ export const Footer: React.FC<FooterProps> = ({
                 </a>
               </li>
             </ul>
+          </div>
+
+          {/* Original QR Code */}
+          <div>
+            <h4 className="font-bold text-[#C9A84C] text-sm mb-4 pb-2 border-b border-slate-800/80">
+              {isAr ? 'الوصول السريع للموقع' : 'Quick Website Access'}
+            </h4>
+            <div className="rounded-2xl bg-white/10 border border-[#C9A84C]/30 p-3 backdrop-blur-xl shadow-xl">
+              <a href={typeof window !== 'undefined' ? window.location.href : '#'} target="_blank" rel="noreferrer" className="block rounded-xl overflow-hidden bg-white p-2 hover:scale-[1.02] transition-transform">
+                <img src="/company-qr.jpg" alt={isAr ? 'رمز QR للموقع' : 'Website QR code'} className="w-full aspect-square object-contain" />
+              </a>
+              <div className="flex items-center justify-center gap-2 mt-3 text-xs text-slate-200 font-bold">
+                <ScanLine className="w-4 h-4 text-[#C9A84C]" />
+                <span>{isAr ? 'امسح الرمز لفتح آخر نسخة' : 'Scan to open the latest version'}</span>
+              </div>
+            </div>
           </div>
 
           {/* Admin & Security Access */}
