@@ -56,6 +56,7 @@ interface AnimatedBackgroundProps {
   theme?: 'light' | 'dark';
   onStyleChange?: (newMode: BgStyleMode) => void;
   showQuickToggle?: boolean;
+  customSlides?: DynamicBgSlide[];
 }
 
 export const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
@@ -65,8 +66,10 @@ export const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
   theme = 'light',
   onStyleChange,
   showQuickToggle = true,
+  customSlides = [],
 }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const slides = customSlides.length ? customSlides : DYNAMIC_BACKGROUNDS;
 
   // Three-second interactive background slideshow state
   const [activeBgIdx, setActiveBgIdx] = useState<number>(0);
@@ -77,11 +80,11 @@ export const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
     if (!isPlaying) return;
 
     const interval = setInterval(() => {
-      setActiveBgIdx((prev) => (prev + 1) % DYNAMIC_BACKGROUNDS.length);
+      setActiveBgIdx((prev) => (prev + 1) % slides.length);
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [isPlaying]);
+  }, [isPlaying, slides.length]);
 
   useEffect(() => {
     if (styleMode === 'off') return;
@@ -372,12 +375,12 @@ export const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
     off: { nameAr: 'إيقاف الخلفية المتحركة', nameEn: 'Disable FX', icon: <EyeOff className="w-3.5 h-3.5" /> },
   };
 
-  const currentBgSlide = DYNAMIC_BACKGROUNDS[activeBgIdx];
+  const currentBgSlide = slides[activeBgIdx % slides.length];
 
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
       {/* Three-second dynamic background image slideshow layer */}
-      {DYNAMIC_BACKGROUNDS.map((slide, idx) => {
+      {slides.map((slide, idx) => {
         const isActive = idx === activeBgIdx;
         return (
           <div
@@ -431,7 +434,7 @@ export const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
 
         {/* Manual Next Slide Button */}
         <button
-          onClick={() => setActiveBgIdx((prev) => (prev + 1) % DYNAMIC_BACKGROUNDS.length)}
+          onClick={() => setActiveBgIdx((prev) => (prev + 1) % slides.length)}
           title="التغيير للخلفية التالية فوراً"
           className="p-1.5 rounded-xl bg-white/10 hover:bg-[#C9A84C] hover:text-[#0A1628] text-white transition-all"
         >

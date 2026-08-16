@@ -93,20 +93,22 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
   const heroFileInputRef = useRef<HTMLInputElement>(null);
   const libraryFileInputRef = useRef<HTMLInputElement>(null);
 
-  const handleLibraryFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    processImageFile(file, async (url) => {
-      const newImg: ImageItem = {
-        id: 'img_' + Date.now(),
+  const handleLibraryFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = (Array.from(e.target.files || []) as File[]).slice(0, 50);
+    if (!files.length) return;
+    triggerSaveStatus();
+    for (const [index, file] of files.entries()) {
+      const url = await readImageFile(file);
+      await onSaveImageItem({
+        id: `img_${Date.now()}_${index}`,
         url,
         category: 'general',
-        name: file.name || 'صورة مخصصة',
+        name: file.name || `صورة مخصصة ${index + 1}`,
         dateAdded: new Date().toLocaleDateString(),
-      };
-      triggerSaveStatus();
-      await onSaveImageItem(newImg);
-    });
+      });
+    }
+    if (files.length === 50) alert(isAr ? 'تمت إضافة أول 50 صورة كحد أقصى.' : 'The first 50 images were added as the maximum batch.');
+    e.target.value = '';
   };
 
   // Handle password authentication without displaying password hint
@@ -164,31 +166,42 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
     });
   };
 
-  // Hero Slide File Upload Handler
-  const handleSlideUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    processImageFile(file, async (url) => {
+  // Hero/background slideshow upload handler (up to 50 files per batch)
+  const handleSlideUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = (Array.from(e.target.files || []) as File[]).slice(0, 50);
+    if (!files.length) return;
+    triggerSaveStatus();
+    for (const [index, file] of files.entries()) {
+      const url = await readImageFile(file);
       const newSlide: HeroSlide = {
-        id: 'slide_' + Date.now(),
+        id: `slide_${Date.now()}_${index}`,
         imageUrl: url,
         titleAr: localSettings.heroTitleAr,
         titleEn: localSettings.heroTitleEn,
         subtitleAr: localSettings.heroSubtitleAr,
         subtitleEn: localSettings.heroSubtitleEn,
-        displayOrder: heroSlides.length + 1,
+        displayOrder: heroSlides.length + index + 1,
       };
-      triggerSaveStatus();
       await onSaveHeroSlide(newSlide);
       await onSaveImageItem({
-        id: 'img_' + Date.now(),
+        id: `img_${Date.now()}_${index}`,
         url,
         category: 'background',
         name: file.name,
         dateAdded: new Date().toLocaleDateString(),
       });
-    });
+    }
+    if (files.length === 50) alert(isAr ? 'تمت إضافة أول 50 خلفية كحد أقصى.' : 'The first 50 backgrounds were added as the maximum batch.');
+    e.target.value = '';
   };
+
+  const readImageFile = (file: File): Promise<string> =>
+    new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result as string);
+      reader.onerror = () => reject(reader.error || new Error('Unable to read image'));
+      reader.readAsDataURL(file);
+    });
 
   // Helper reader
   const processImageFile = (file: File, callback: (url: string) => void) => {
@@ -1090,13 +1103,14 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
                   className="bg-[#C9A84C] text-[#0A1628] font-black px-4 py-2 rounded-xl hover:bg-[#D8B65C] transition flex items-center gap-1.5 shadow"
                 >
                   <Upload className="w-4 h-4" />
-                  <span>{isAr ? 'رفع صورة جديدة للملعرض' : 'Upload Slide Image'}</span>
+                  <span>{isAr ? 'رفع حتى 50 صورة دفعة واحدة' : 'Upload up to 50 images at once'}</span>
                 </button>
                 <input
                   ref={heroFileInputRef}
                   type="file"
                   accept="image/*"
                   onChange={handleSlideUpload}
+                  multiple
                   className="hidden"
                 />
               </div>
@@ -1157,13 +1171,14 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
                   className="bg-[#C9A84C] text-[#0A1628] font-black px-4 py-2 rounded-xl hover:bg-[#D8B65C] transition flex items-center gap-1.5 shadow"
                 >
                   <Upload className="w-4 h-4" />
-                  <span>{isAr ? 'رفع صورة جديدة للمكتبة' : 'Upload Image to Library'}</span>
+                  <span>{isAr ? 'رفع حتى 50 صورة من الاستديو' : 'Upload up to 50 studio images'}</span>
                 </button>
                 <input
                   ref={libraryFileInputRef}
                   type="file"
                   accept="image/*"
                   onChange={handleLibraryFileUpload}
+                  multiple
                   className="hidden"
                 />
               </div>

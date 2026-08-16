@@ -319,6 +319,12 @@ export function App() {
           handleSaveSettings({ ...settings, animatedBgStyle: newStyle })
         }
         showQuickToggle={false}
+        customSlides={heroSlides.map((slide) => ({
+          id: slide.id,
+          titleAr: slide.titleAr,
+          titleEn: slide.titleEn,
+          url: slide.imageUrl,
+        }))}
       />
 
       {/* Optional Dynamic Global Background Image Overlay */}

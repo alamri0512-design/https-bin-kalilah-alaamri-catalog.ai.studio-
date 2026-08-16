@@ -581,7 +581,7 @@ export const DEFAULT_SITE_SETTINGS: SiteSettings = {
   phone1: '+96899088000',
   phone2: '+96896070609',
   emails: ['bs@binkalilahalaamri.com', 'alamri0512@gmail.com'],
-  whatsappNumber: '+96899088000',
+  whatsappNumber: '+96899089300',
   googleMapsUrl: 'https://maps.app.goo.gl/PA1CxY4vLxo55BrN7',
   adminPassword: 'SALALAH2026',
   heroSpeed: 5,
