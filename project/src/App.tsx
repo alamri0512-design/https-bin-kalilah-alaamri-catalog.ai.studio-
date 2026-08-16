@@ -52,6 +52,25 @@ export function App() {
   const [orders, setOrders] = useState<OrderForm[]>([]);
   const [diagnosticLogs, setDiagnosticLogs] = useState<AuditLog[]>([]);
   const [undoStack, setUndoStack] = useState<Array<{ action: string; snapshot: any }>>([]);
+  const [publishedAt, setPublishedAt] = useState<string | null>(null);
+
+  const publishCurrentState = async (password?: string) => {
+    try {
+      const current = await dbManager.getAllData();
+      const response = await fetch('/api/site-state', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json', 'x-admin-password': password || settings?.adminPassword || 'SALALAH2026' },
+        body: JSON.stringify(current),
+      });
+      if (!response.ok) throw new Error('Publish failed');
+      const result = await response.json();
+      setPublishedAt(result.updatedAt || new Date().toISOString());
+      return true;
+    } catch (error) {
+      console.warn('Central publish unavailable; local changes remain available on this device.', error);
+      return false;
+    }
+  };
 
   // B2B Active Order Items
   const [orderItems, setOrderItems] = useState<OrderItem[]>([]);
@@ -72,7 +91,17 @@ export function App() {
   useEffect(() => {
     async function loadData() {
       await dbManager.init();
-      const state = await dbManager.getAllData();
+      let state = await dbManager.getAllData();
+      try {
+        const response = await fetch('/api/site-state');
+        const remote = await response.json();
+        if (remote.state?.settings && remote.state?.products) {
+          state = remote.state;
+          setPublishedAt(remote.updatedAt || null);
+        }
+      } catch (error) {
+        console.warn('Using local state because the central state endpoint is unavailable.', error);
+      }
 
       setSettings(state.settings);
       setCategories(state.categories);
@@ -169,48 +198,57 @@ export function App() {
   const handleSaveSettings = async (newSettings: SiteSettings) => {
     await dbManager.saveSiteSettings(newSettings);
     setSettings(newSettings);
+    await publishCurrentState(newSettings.adminPassword);
   };
 
   const handleSaveProduct = async (p: Product) => {
     await dbManager.saveProduct(p);
     setProducts(await dbManager.getProducts());
+    await publishCurrentState();
   };
 
   const handleDeleteProduct = async (pId: string) => {
     await dbManager.deleteProduct(pId);
     setProducts(await dbManager.getProducts());
+    await publishCurrentState();
     setUndoStack(await dbManager.getUndoStack());
   };
 
   const handleSaveCategory = async (c: Category) => {
     await dbManager.saveCategory(c);
     setCategories(await dbManager.getCategories());
+    await publishCurrentState();
   };
 
   const handleDeleteCategory = async (cId: string) => {
     await dbManager.deleteCategory(cId);
     setCategories(await dbManager.getCategories());
+    await publishCurrentState();
   };
 
   const handleSaveHeroSlide = async (s: HeroSlide) => {
     await dbManager.saveHeroSlide(s);
     setHeroSlides(await dbManager.getHeroSlides());
+    await publishCurrentState();
   };
 
   const handleDeleteHeroSlide = async (sId: string) => {
     await dbManager.deleteHeroSlide(sId);
     setHeroSlides(await dbManager.getHeroSlides());
+    await publishCurrentState();
     setUndoStack(await dbManager.getUndoStack());
   };
 
   const handleSaveImageItem = async (img: ImageItem) => {
     await dbManager.saveImageItem(img);
     setImageLibrary(await dbManager.getImageLibrary());
+    await publishCurrentState();
   };
 
   const handleDeleteImageItem = async (imgId: string) => {
     await dbManager.deleteImageItem(imgId);
     setImageLibrary(await dbManager.getImageLibrary());
+    await publishCurrentState();
     setUndoStack(await dbManager.getUndoStack());
   };
 

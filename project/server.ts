@@ -1,5 +1,6 @@
 import express from 'express';
 import path from 'path';
+import fs from 'fs/promises';
 import { createServer as createViteServer } from 'vite';
 import { GoogleGenAI } from '@google/genai';
 
@@ -7,7 +8,31 @@ async function startServer() {
   const app = express();
   const PORT = 3000;
 
-  app.use(express.json({ limit: '10mb' }));
+  app.use(express.json({ limit: '60mb' }));
+
+  // Central published state. This is shared by every visitor instead of browser-only IndexedDB.
+  const statePath = path.join(process.cwd(), 'data', 'site-state.json');
+  const adminPassword = process.env.ADMIN_PASSWORD || 'SALALAH2026';
+  async function readPublishedState() {
+    try { return JSON.parse(await fs.readFile(statePath, 'utf8')); }
+    catch { return null; }
+  }
+  async function writePublishedState(state: unknown) {
+    await fs.mkdir(path.dirname(statePath), { recursive: true });
+    const tempPath = `${statePath}.tmp`;
+    await fs.writeFile(tempPath, JSON.stringify(state), 'utf8');
+    await fs.rename(tempPath, statePath);
+  }
+  app.get('/api/site-state', async (_req, res) => {
+    const state = await readPublishedState();
+    res.json({ state, updatedAt: state?.publishedAt || null });
+  });
+  app.put('/api/site-state', async (req, res) => {
+    if (req.header('x-admin-password') !== adminPassword) return res.status(401).json({ error: 'Unauthorized' });
+    const state = { ...req.body, publishedAt: new Date().toISOString() };
+    await writePublishedState(state);
+    res.json({ ok: true, updatedAt: state.publishedAt });
+  });
 
   // Initialize Gemini AI lazily/safely
   let aiClient: GoogleGenAI | null = null;
