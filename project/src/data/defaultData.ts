@@ -530,6 +530,13 @@ export const DEFAULT_PRODUCTS: Product[] = [
   },
 ];
 
+// Attach the supplied Salalah Mills catalog pages to the product records.
+// The first 30 pages map to the 30 seeded products; the remaining pages stay available under /product-pages.
+DEFAULT_PRODUCTS.forEach((product, index) => {
+  const page = String(index + 1).padStart(2, '0');
+  product.image = `/product-pages/product-${page}.jpg`;
+});
+
 export const DEFAULT_HERO_SLIDES: HeroSlide[] = [
   {
     id: 'slide_1',

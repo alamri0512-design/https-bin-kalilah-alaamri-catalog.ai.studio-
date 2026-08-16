@@ -1,20 +1,42 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# شركة بن كليلة العامري — الكتالوج الرقمي
 
-# Run and deploy your AI Studio app
+موقع مستقل مخصص لشركة بن كليلة العامري، مبني بواجهة عربية وإنجليزية، وبطاقات منتجات ثلاثية الأبعاد، وخلفيات زجاجية قابلة للتخصيص، ولوحة إدارة للصور والأسعار والأوزان والتصميم.
 
-This contains everything you need to run your app locally.
+## التشغيل المحلي
 
-View your app in AI Studio: https://ai.studio/apps/ff85bf57-2155-459f-9913-96fec2fe8c66
+يتطلب Node.js 20 أو أحدث.
 
-## Run Locally
+```bash
+npm install
+ADMIN_PASSWORD='SALALAH2026' npm run dev
+```
 
-**Prerequisites:**  Node.js
+افتح `http://localhost:3000` في المتصفح.
 
+## البناء والإنتاج
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```bash
+npm run lint
+npm run build
+ADMIN_PASSWORD='SALALAH2026' NODE_ENV=production npm start
+```
+
+يخدم الخادم ملفات الواجهة المبنية ويقدم مسارات الحالة المركزية تحت `/api/site-state`. يجب تشغيله على خادم دائم مع مجلد `data` قابل للكتابة حتى يرى جميع العملاء آخر نسخة منشورة.
+
+## النشر المباشر على خادم عادي
+
+انسخ مجلد المشروع إلى الخادم، ثبّت Node.js، شغّل `npm install`، ثم شغّل `npm run build` و`npm start` خلف Nginx أو أي reverse proxy. عيّن `ADMIN_PASSWORD` في متغيرات البيئة ولا تضع كلمة المرور الحقيقية داخل المستودع العام.
+
+## المزايا الأساسية
+
+تتضمن لوحة الإدارة رفع الصور مباشرة من استديو الهاتف، القص والتعديل، التحكم في العرض والارتفاع والملاءمة والشفافية والضبابية، وإدارة المنتجات والأوزان والكميات والأسعار. تحفظ التغييرات تلقائيًا إلى الحالة المركزية عند حفظها، ويقرأ الجمهور هذه الحالة بدل البيانات الافتراضية المحلية. أُدرج QR الأصلي داخل التصميم المخصص في التذييل.
+
+## ملاحظات الأصول
+
+الصور الصغيرة الثابتة الموجودة في `public` تُضمّن مع البناء. أما الصور الكبيرة الكثيرة فيُفضّل تخزينها في تخزين ملفات دائم وربط روابطها بالبيانات، بدل تخزينها جميعًا داخل JSON.
+
+## الهوية
+
+الاسم العربي: شركة بن كليلة العامري.
+
+الهوية البصرية: كحلي عميق، ذهبي، أزرق سماوي، وطبقات زجاجية شفافة مع مؤثرات عمق ثلاثية الأبعاد.

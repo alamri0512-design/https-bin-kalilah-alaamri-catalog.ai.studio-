@@ -238,7 +238,7 @@ class IndexedDBStorage {
 
   // Products
   public async getProducts(): Promise<Product[]> {
-    const SEED_VER = 'v3_zero_prices';
+    const SEED_VER = 'v4_salalah_catalog_pages';
     const currentVer = localStorage.getItem(`${DB_NAME}_products_ver`);
     const list = await this.getAllItems<Product>('products');
 
@@ -246,7 +246,7 @@ class IndexedDBStorage {
       return list;
     }
 
-    // Force re-seed products to sync updated DEFAULT_PRODUCTS with 0 prices
+    // Re-seed once to sync the supplied Salalah Mills catalog pages and current defaults
     await this.clearStore('products');
     for (const p of DEFAULT_PRODUCTS) {
       await this.saveProduct(p);
