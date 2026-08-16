@@ -61,7 +61,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
   };
 
   return (
-    <section id="catalog" className="py-16 bg-white/20 dark:bg-[#0A1628]/30 text-slate-900 dark:text-white relative backdrop-blur-md transition-colors">
+    <section id="catalog" className="py-20 bg-transparent text-slate-900 dark:text-white relative transition-colors">
       {/* Toast Notification */}
       {addedToast && (
         <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-[#C9A84C] text-[#0A1628] font-extrabold px-6 py-3 rounded-xl shadow-2xl flex items-center gap-2 border border-amber-300 animate-bounce">
@@ -88,7 +88,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
         </div>
 
         {/* Search Bar & Filter Controls */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-8 bg-white/30 dark:bg-[#0D1B2E]/40 p-4 rounded-2xl border border-white/40 dark:border-[#C9A84C]/30 shadow-xl backdrop-blur-md">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10 bg-white/12 dark:bg-[#081426]/35 p-4 rounded-[1.75rem] border border-white/35 dark:border-white/10 shadow-2xl backdrop-blur-2xl">
           {/* Search Box */}
           <div className="relative w-full md:w-80">
             <input
@@ -137,14 +137,14 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-7">
             {filteredProducts.map((p) => {
               const currentWeight = selectedWeights[p.id] || p.defaultWeight || p.weights[0] || (isAr ? 'قياسي' : 'Standard');
 
               return (
                 <div
                   key={p.id}
-                  className="group rounded-[2rem] border border-white/40 dark:border-[#C9A84C]/30 hover:border-[#C9A84C] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2 flex flex-col justify-between overflow-hidden relative backdrop-blur-md p-4 [transform-style:preserve-3d] [perspective:1200px]"
+                  className="group rounded-[2rem] border border-white/45 dark:border-white/15 hover:border-[#C9A84C]/80 transition-all duration-500 shadow-[0_18px_60px_rgba(15,23,42,0.18)] hover:shadow-[0_28px_80px_rgba(15,23,42,0.34)] hover:-translate-y-2 flex flex-col justify-between overflow-hidden relative backdrop-blur-2xl p-3.5 [transform-style:preserve-3d] [perspective:1200px] min-h-[445px]"
                   style={{
                     background: p.cardAccent === 'gold' ? 'linear-gradient(145deg, rgba(201,168,76,0.34), rgba(255,255,255,0.10))' : p.cardAccent === 'sky' ? 'linear-gradient(145deg, rgba(125,211,252,0.34), rgba(255,255,255,0.10))' : p.cardAccent === 'transparent' ? 'rgba(255,255,255,0.05)' : 'linear-gradient(145deg, rgba(10,22,40,0.72), rgba(35,64,94,0.38))',
                     opacity: (p.cardOpacity ?? 100) / 100,
@@ -152,9 +152,10 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                   }}
                 >
                   {/* Image Container with Weight Badge */}
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-[#C9A84C]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div
                     onClick={() => setActiveModalProduct(p)}
-                    className="relative h-56 bg-white/25 dark:bg-[#081220]/40 rounded-2xl border border-white/30 dark:border-white/10 overflow-hidden flex items-center justify-center p-4 mb-3 cursor-pointer group-hover:bg-white/40 dark:group-hover:bg-[#081220]/60 transition-colors backdrop-blur-sm"
+                    className="relative h-64 sm:h-72 bg-white/22 dark:bg-[#081220]/38 rounded-[1.35rem] border border-white/35 dark:border-white/10 overflow-hidden flex items-center justify-center p-3 mb-4 cursor-pointer group-hover:bg-white/38 dark:group-hover:bg-[#081220]/60 transition-colors backdrop-blur-xl shadow-inner"
                   >
                     <img
                       src={p.image}
@@ -199,9 +200,13 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                       >
                         {isAr ? p.nameAr : p.nameEn}
                       </h3>
-                      <p className="text-xs text-slate-600 dark:text-slate-300 line-clamp-2 leading-relaxed mb-4 font-medium">
+                      <p className="text-xs text-slate-600 dark:text-slate-300 line-clamp-2 leading-relaxed mb-3 font-medium">
                         {isAr ? p.descriptionAr : p.descriptionEn}
                       </p>
+                      <div className="flex flex-wrap gap-1.5 mb-3">
+                        <span className="px-2.5 py-1 rounded-full bg-white/45 dark:bg-white/10 border border-white/45 dark:border-white/10 text-[10px] font-bold text-slate-700 dark:text-slate-200">{currentWeight}</span>
+                        <span className="px-2.5 py-1 rounded-full bg-[#C9A84C]/15 border border-[#C9A84C]/30 text-[10px] font-bold text-[#8b6915] dark:text-[#F5D77A]">{p.unit === 'bag' ? (isAr ? 'كيس' : 'Bag') : p.unit}</span>
+                      </div>
                     </div>
 
                     {/* Bottom Row: Price & + فرص Button */}
@@ -223,7 +228,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                         <div className="w-3.5 h-3.5 rounded-full bg-[#C9A84C]/20 border border-[#C9A84C] flex items-center justify-center text-[#C9A84C]">
                           <Check className="w-2.5 h-2.5 stroke-[3]" />
                         </div>
-                        <span>{isAr ? 'فرص +' : '+ Opportunities'}</span>
+                        <span>{isAr ? 'أضف للطلب' : 'Add to order'}</span>
                       </button>
                     </div>
                   </div>
@@ -237,7 +242,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
       {/* Product Details Modal View */}
       {activeModalProduct && (
         <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-2xl w-full p-6 text-slate-900 relative shadow-2xl max-h-[90vh] overflow-y-auto border border-slate-200">
+          <div className="bg-white/95 dark:bg-[#0A1628]/95 rounded-[2rem] max-w-2xl w-full p-6 text-slate-900 dark:text-white relative shadow-2xl max-h-[90vh] overflow-y-auto border border-white/40 dark:border-[#C9A84C]/30 backdrop-blur-2xl">
             <button
               onClick={() => setActiveModalProduct(null)}
               className="absolute top-4 right-4 text-slate-500 hover:text-slate-900 p-2 rounded-lg bg-slate-100"

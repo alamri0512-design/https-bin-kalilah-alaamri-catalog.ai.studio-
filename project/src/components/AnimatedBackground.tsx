@@ -68,17 +68,17 @@ export const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
 }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
-  // 2-Second Interactive Background Slideshow State
+  // Three-second interactive background slideshow state
   const [activeBgIdx, setActiveBgIdx] = useState<number>(0);
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
 
-  // Switch background image every 2000ms (2 seconds)
+  // Switch background image every 3000ms (3 seconds)
   useEffect(() => {
     if (!isPlaying) return;
 
     const interval = setInterval(() => {
       setActiveBgIdx((prev) => (prev + 1) % DYNAMIC_BACKGROUNDS.length);
-    }, 2000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [isPlaying]);
@@ -376,7 +376,7 @@ export const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
 
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-      {/* 2-Second Dynamic Background Image Slideshow Layer */}
+      {/* Three-second dynamic background image slideshow layer */}
       {DYNAMIC_BACKGROUNDS.map((slide, idx) => {
         const isActive = idx === activeBgIdx;
         return (
@@ -411,7 +411,7 @@ export const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
         <div className="absolute -bottom-40 left-1/4 w-[32rem] h-[32rem] rounded-full bg-amber-500/15 blur-3xl animate-pulse delay-2000" />
       </div>
 
-      {/* Live 2-Second Background Slide Indicator & Mode Switcher Controls */}
+      {/* Live background slide indicator and mode switcher controls */}
       <div className="pointer-events-auto fixed bottom-5 left-5 z-40 hidden md:flex items-center gap-2 p-2 bg-[#0A1628]/85 backdrop-blur-xl border border-[#C9A84C]/50 rounded-2xl shadow-2xl text-xs text-white">
         {/* Live Status Pill */}
         <div className="flex items-center gap-2 px-3 py-1.5 bg-black/40 rounded-xl border border-[#C9A84C]/30 text-[11px] font-bold text-[#C9A84C]">
@@ -419,7 +419,7 @@ export const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
           <span>الخلفية التفاعلية: {currentBgSlide.titleAr}</span>
         </div>
 
-        {/* Play / Pause 2-Second Transition Button */}
+        {/* Play / pause transition button */}
         <button
           onClick={() => setIsPlaying(!isPlaying)}
           title={isPlaying ? 'إيقاف مؤقت للتنقل التلقائي' : 'تشغيل التنقل التلقائي للخلفيات'}
