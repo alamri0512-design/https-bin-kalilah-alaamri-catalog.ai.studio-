@@ -731,6 +731,55 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
                         className="w-full bg-[#13233A] border border-slate-700 p-2.5 rounded-xl text-white"
                       />
                     </div>
+
+                    <div>
+                      <label className="block text-slate-300 font-bold mb-1">{isAr ? 'الوزن الافتراضي:' : 'Default weight:'}</label>
+                      <input
+                        type="text"
+                        value={editingProduct.defaultWeight}
+                        onChange={(e) => setEditingProduct({ ...editingProduct, defaultWeight: e.target.value })}
+                        className="w-full bg-[#13233A] border border-slate-700 p-2.5 rounded-xl text-white"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 bg-[#0B1422] p-4 rounded-2xl border border-slate-800">
+                    <div>
+                      <label className="block text-slate-300 text-xs font-bold mb-1">{isAr ? 'عرض الصورة %' : 'Image width %'}</label>
+                      <input type="number" min="10" max="100" value={editingProduct.imageWidth ?? 100} onChange={(e) => setEditingProduct({ ...editingProduct, imageWidth: Number(e.target.value) })} className="w-full bg-[#13233A] border border-slate-700 p-2 rounded-lg text-white" />
+                    </div>
+                    <div>
+                      <label className="block text-slate-300 text-xs font-bold mb-1">{isAr ? 'ارتفاع الصورة %' : 'Image height %'}</label>
+                      <input type="number" min="10" max="100" value={editingProduct.imageHeight ?? 100} onChange={(e) => setEditingProduct({ ...editingProduct, imageHeight: Number(e.target.value) })} className="w-full bg-[#13233A] border border-slate-700 p-2 rounded-lg text-white" />
+                    </div>
+                    <div>
+                      <label className="block text-slate-300 text-xs font-bold mb-1">{isAr ? 'شفافية الصورة %' : 'Image opacity %'}</label>
+                      <input type="number" min="0" max="100" value={editingProduct.imageOpacity ?? 100} onChange={(e) => setEditingProduct({ ...editingProduct, imageOpacity: Number(e.target.value) })} className="w-full bg-[#13233A] border border-slate-700 p-2 rounded-lg text-white" />
+                    </div>
+                    <div>
+                      <label className="block text-slate-300 text-xs font-bold mb-1">{isAr ? 'ضبابية الصورة px' : 'Image blur px'}</label>
+                      <input type="number" min="0" max="20" value={editingProduct.imageBlur ?? 0} onChange={(e) => setEditingProduct({ ...editingProduct, imageBlur: Number(e.target.value) })} className="w-full bg-[#13233A] border border-slate-700 p-2 rounded-lg text-white" />
+                    </div>
+                    <div>
+                      <label className="block text-slate-300 text-xs font-bold mb-1">{isAr ? 'لون البطاقة' : 'Card color'}</label>
+                      <select value={editingProduct.cardAccent ?? 'navy'} onChange={(e) => setEditingProduct({ ...editingProduct, cardAccent: e.target.value as any })} className="w-full bg-[#13233A] border border-slate-700 p-2 rounded-lg text-white">
+                        <option value="navy">{isAr ? 'كحلي' : 'Navy'}</option><option value="sky">{isAr ? 'أزرق فاتح' : 'Light blue'}</option><option value="gold">{isAr ? 'ذهبي' : 'Gold'}</option><option value="transparent">{isAr ? 'شفاف' : 'Transparent'}</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-slate-300 text-xs font-bold mb-1">{isAr ? 'شفافية البطاقة %' : 'Card opacity %'}</label>
+                      <input type="number" min="10" max="100" value={editingProduct.cardOpacity ?? 100} onChange={(e) => setEditingProduct({ ...editingProduct, cardOpacity: Number(e.target.value) })} className="w-full bg-[#13233A] border border-slate-700 p-2 rounded-lg text-white" />
+                    </div>
+                    <div>
+                      <label className="block text-slate-300 text-xs font-bold mb-1">{isAr ? 'ضبابية البطاقة px' : 'Card blur px'}</label>
+                      <input type="number" min="0" max="40" value={editingProduct.cardBlur ?? 14} onChange={(e) => setEditingProduct({ ...editingProduct, cardBlur: Number(e.target.value) })} className="w-full bg-[#13233A] border border-slate-700 p-2 rounded-lg text-white" />
+                    </div>
+                    <div>
+                      <label className="block text-slate-300 text-xs font-bold mb-1">{isAr ? 'ملاءمة الصورة' : 'Image fit'}</label>
+                      <select value={editingProduct.imageFit ?? 'contain'} onChange={(e) => setEditingProduct({ ...editingProduct, imageFit: e.target.value as any })} className="w-full bg-[#13233A] border border-slate-700 p-2 rounded-lg text-white">
+                        <option value="contain">{isAr ? 'احتواء' : 'Contain'}</option><option value="cover">{isAr ? 'تغطية' : 'Cover'}</option><option value="fill">{isAr ? 'ملء' : 'Fill'}</option>
+                      </select>
+                    </div>
                   </div>
 
                   {/* Image Upload Box with Drag & Drop */}

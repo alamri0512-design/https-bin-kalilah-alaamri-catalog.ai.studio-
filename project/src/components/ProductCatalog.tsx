@@ -144,7 +144,12 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
               return (
                 <div
                   key={p.id}
-                  className="group bg-white/20 dark:bg-[#0D1B2E]/35 rounded-3xl border border-white/40 dark:border-[#C9A84C]/30 hover:border-[#C9A84C] hover:bg-white/35 dark:hover:bg-[#0D1B2E]/55 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden relative backdrop-blur-md p-4"
+                  className="group rounded-[2rem] border border-white/40 dark:border-[#C9A84C]/30 hover:border-[#C9A84C] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2 flex flex-col justify-between overflow-hidden relative backdrop-blur-md p-4 [transform-style:preserve-3d] [perspective:1200px]"
+                  style={{
+                    background: p.cardAccent === 'gold' ? 'linear-gradient(145deg, rgba(201,168,76,0.34), rgba(255,255,255,0.10))' : p.cardAccent === 'sky' ? 'linear-gradient(145deg, rgba(125,211,252,0.34), rgba(255,255,255,0.10))' : p.cardAccent === 'transparent' ? 'rgba(255,255,255,0.05)' : 'linear-gradient(145deg, rgba(10,22,40,0.72), rgba(35,64,94,0.38))',
+                    opacity: (p.cardOpacity ?? 100) / 100,
+                    backdropFilter: `blur(${p.cardBlur ?? 14}px)`,
+                  }}
                 >
                   {/* Image Container with Weight Badge */}
                   <div
@@ -154,7 +159,16 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                     <img
                       src={p.image}
                       alt={p.nameEn}
-                      className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105 drop-shadow-lg"
+                      className="transition-transform duration-500 group-hover:scale-105 drop-shadow-lg"
+                      style={{
+                        width: `${p.imageWidth ?? 100}%`,
+                        height: `${p.imageHeight ?? 100}%`,
+                        maxWidth: '100%',
+                        maxHeight: '100%',
+                        objectFit: p.imageFit ?? 'contain',
+                        opacity: (p.imageOpacity ?? 100) / 100,
+                        filter: `blur(${p.imageBlur ?? 0}px) drop-shadow(0 16px 14px rgba(0,0,0,0.22))`,
+                      }}
                     />
 
                     {/* Weight Badge on Top Right */}

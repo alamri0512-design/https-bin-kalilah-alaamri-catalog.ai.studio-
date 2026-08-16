@@ -31,6 +31,15 @@ export interface Product {
   unit: ProductUnit;
   isAvailable: boolean;
   isFeatured?: boolean;
+  /** Per-product visual controls managed from the admin panel. */
+  imageWidth?: number;
+  imageHeight?: number;
+  imageOpacity?: number;
+  imageBlur?: number;
+  imageFit?: 'contain' | 'cover' | 'fill';
+  cardAccent?: 'navy' | 'gold' | 'sky' | 'transparent';
+  cardOpacity?: number;
+  cardBlur?: number;
 }
 
 export interface Category {
