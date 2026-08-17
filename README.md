@@ -1,4 +1,4 @@
-```html
+https-bin-kalilah-alaamri-catalog.ai.studio-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -896,57 +896,7 @@
     </script>
 </body>
 </html>
-```
+Screenshot_20260604_191713738 Screenshot_20260604_040930048 IMG-20260522-WA0140 IMG-20260522-WA0138 TopSaver10735607 Honor_٢٠٢٦٠٦١٥_٠٢٢١٢٨~2 صور الصوي_20260717_192151_40 صور الصوي_20260717_192151_42 Videoframe_20260718_114655_com huawei himovie overseas Videoframe_20260718_114657_com huawei himovie overseas Videoframe_20260718_114700_com huawei himovie overseas Videoframe_20260718_114703_com huawei himovie overseas Videoframe_20260718_114715_com huawei himovie overseas Videoframe_20260718_114712_com huawei himovie overseas Videoframe_20260718_114709_com huawei himovie overseas Videoframe_20260718_114706_com huawei himovie overseas Videoframe_20260718_114718_com huawei himovie overseas Videoframe_20260718_114721_com huawei himovie overseas Videoframe_20260718_114724_com huawei himovie overseas Videoframe_20260718_114727_com huawei himovie overseas DJI_0689~2 Screenshot_20260724_025312_com huawei himovie overseas_edit_230178625921645 Screenshot_20260724_030130_com huawei himovie overseas Screenshot_20260724_030123_com huawei himovie overseas Screenshot_20260724_030117_com huawei himovie overseas Screenshot_20260724_030118_com huawei himovie overseas Screenshot_20260724_030120_com huawei himovie overseas Screenshot_20260724_030121_com huawei himovie overseas Screenshot_20260724_030516_com huawei himovie overseas_edit_229703494505572 Screenshot_20260724_030640_com huawei himovie overseas_edit_229557894155594 Screenshot_20260724_030642_com huawei himovie overseas_edit_229544415908200 Screenshot_20260724_030648_com huawei himovie overseas_edit_229514052354559 Screenshot_20260724_030906_com huawei himovie overseas_edit_229408728907179 Screenshot_20260724_030902_com huawei himovie overseas_edit_229420442995198 Screenshot_20260724_031014_com huawei himovie overseas_edit_229339086841044 Screenshot_20260724_031430_com huawei himovie overseas Screenshot_20260724_031640_com huawei himovie overseas_edit_229042115431193 Screenshot_20260724_031610_com huawei himovie overseas_edit_229052003987963 Screenshot_20260724_031953 Screenshot_20260724_031814_1_com huawei himovie overseas_edit_228893864297883 Screenshot_20260724_031812_com huawei himovie overseas Screenshot_20260724_031751_com huawei himovie overseas Screenshot_20260724_031732_com huawei himovie overseas_edit_229006934696824 1785059352142 1785069920994 Photoroom-٢٠٢٦٠٧٢٧_٠٢٥٦٥٣٤٦٧ Photoroom-٢٠٢٦٠٧٢٧_٠٢٥٦٥٣٤٦٧ (2) Screenshot_٢٠٢٦٠٧٢٧_٠٢٥١٤٤٩٤٦ Screenshot_٢٠٢٦٠٧٢٧_٠٢٥١٤٢٠١٨
 
-
-<img width="1276" height="720" alt="Screenshot_20260604_191713738" src="https://github.com/user-attachments/assets/150f3396-4397-46d7-bcf2-380f94fd0465" />
-<img width="1276" height="720" alt="Screenshot_20260604_040930048" src="https://github.com/user-attachments/assets/a556921c-f8fd-49d7-bc8e-0f293a9060b3" />
-<img width="1024" height="1536" alt="IMG-20260522-WA0140" src="https://github.com/user-attachments/assets/dcade469-0c4e-4ea7-87c8-49f75a06c107" />
-<img width="900" height="1600" alt="IMG-20260522-WA0138" src="https://github.com/user-attachments/assets/a1f65152-0bf8-4840-a03d-2fefa891b766" />
-<img width="1080" height="1439" alt="TopSaver10735607" src="https://github.com/user-attachments/assets/3956086f-a5ab-41c0-802b-654effc9f2d0" />
-<img width="2126" height="1200" alt="Honor_٢٠٢٦٠٦١٥_٠٢٢١٢٨~2" src="https://github.com/user-attachments/assets/b9ef5d87-0f3f-4c3a-8f40-f04701aac2a5" />
-<img width="1126" height="2499" alt="صور الصوي_20260717_192151_40" src="https://github.com/user-attachments/assets/f10aaef6-de52-4b78-a50f-0795ea9bbb93" />
-<img width="1200" height="1128" alt="صور الصوي_20260717_192151_42" src="https://github.com/user-attachments/assets/d8f3ac49-4a00-41c7-9abb-d52c7b01b06d" />
-<img width="1280" height="800" alt="Videoframe_20260718_114655_com huawei himovie overseas" src="https://github.com/user-attachments/assets/1f909eef-e4be-4b90-a7b2-1782824c8ec5" />
-<img width="1280" height="800" alt="Videoframe_20260718_114657_com huawei himovie overseas" src="https://github.com/user-attachments/assets/97f42979-a642-4e8b-94e1-8d2f4e340713" />
-<img width="1280" height="800" alt="Videoframe_20260718_114700_com huawei himovie overseas" src="https://github.com/user-attachments/assets/e165f3a7-3dff-4a44-8a84-b2f35183caea" />
-<img width="1280" height="800" alt="Videoframe_20260718_114703_com huawei himovie overseas" src="https://github.com/user-attachments/assets/5bc62a00-c10f-42eb-af27-bddadeeef72d" />
-<img width="1280" height="800" alt="Videoframe_20260718_114715_com huawei himovie overseas" src="https://github.com/user-attachments/assets/fca4bc12-03bb-4a4a-aa64-5874dc35564d" />
-<img width="1280" height="800" alt="Videoframe_20260718_114712_com huawei himovie overseas" src="https://github.com/user-attachments/assets/87cbd36d-7c69-4709-8f38-c3f5eed13143" />
-<img width="1280" height="800" alt="Videoframe_20260718_114709_com huawei himovie overseas" src="https://github.com/user-attachments/assets/3ddda03f-6eb8-42dc-896a-96d79e9652b1" />
-<img width="1280" height="800" alt="Videoframe_20260718_114706_com huawei himovie overseas" src="https://github.com/user-attachments/assets/a805681f-a18e-46a4-8e4d-09cd516f0dc9" />
-<img width="1280" height="800" alt="Videoframe_20260718_114718_com huawei himovie overseas" src="https://github.com/user-attachments/assets/709b1e1e-4a53-4f81-8cc2-741483301e76" />
-<img width="1280" height="800" alt="Videoframe_20260718_114721_com huawei himovie overseas" src="https://github.com/user-attachments/assets/89933947-d4ba-4332-9deb-5af5a871b035" />
-<img width="1280" height="800" alt="Videoframe_20260718_114724_com huawei himovie overseas" src="https://github.com/user-attachments/assets/a3d08912-d494-4d24-a872-b71da2cf9488" />
-<img width="1280" height="800" alt="Videoframe_20260718_114727_com huawei himovie overseas" src="https://github.com/user-attachments/assets/cc007d24-df94-4ba2-a514-addfff7dbcf8" />
-<img width="1920" height="1079" alt="DJI_0689~2" src="https://github.com/user-attachments/assets/9d26c898-1666-487f-824f-88dec73b9ffb" />
-<img width="1200" height="1163" alt="Screenshot_20260724_025312_com huawei himovie overseas_edit_230178625921645" src="https://github.com/user-attachments/assets/d276534a-7e2a-4431-93d2-10d1374208af" />
-<img width="1200" height="1920" alt="Screenshot_20260724_030130_com huawei himovie overseas" src="https://github.com/user-attachments/assets/5f43043d-6732-44a9-a8b1-78058713d70e" />
-<img width="1200" height="1920" alt="Screenshot_20260724_030123_com huawei himovie overseas" src="https://github.com/user-attachments/assets/db2c9396-608a-4798-ad9b-7f4e3c36922c" />
-<img width="1200" height="1920" alt="Screenshot_20260724_030117_com huawei himovie overseas" src="https://github.com/user-attachments/assets/3790e052-f04a-48eb-bc30-718571b5e45e" />
-<img width="1200" height="1920" alt="Screenshot_20260724_030118_com huawei himovie overseas" src="https://github.com/user-attachments/assets/5e01a87b-1cb0-4017-ba38-0e1c7b889adb" />
-<img width="1200" height="1920" alt="Screenshot_20260724_030120_com huawei himovie overseas" src="https://github.com/user-attachments/assets/b6efd8a8-661f-437e-bb5e-ab2ae93bd33f" />
-<img width="1200" height="1920" alt="Screenshot_20260724_030121_com huawei himovie overseas" src="https://github.com/user-attachments/assets/75d4694c-582a-43f8-8785-f5adec33b381" />
-<img width="1099" height="1626" alt="Screenshot_20260724_030516_com huawei himovie overseas_edit_229703494505572" src="https://github.com/user-attachments/assets/8c13e0b1-01ad-4b0f-9c13-1cb905986389" />
-<img width="921" height="577" alt="Screenshot_20260724_030640_com huawei himovie overseas_edit_229557894155594" src="https://github.com/user-attachments/assets/2654b186-d120-437f-812a-1e567b411056" />
-<img width="925" height="611" alt="Screenshot_20260724_030642_com huawei himovie overseas_edit_229544415908200" src="https://github.com/user-attachments/assets/7078a7f6-31be-4b65-822c-1f35393736e3" />
-<img width="954" height="673" alt="Screenshot_20260724_030648_com huawei himovie overseas_edit_229514052354559" src="https://github.com/user-attachments/assets/8cdb1c27-2303-49c2-a128-daaf4a6a08a4" />
-<img width="1920" height="698" alt="Screenshot_20260724_030906_com huawei himovie overseas_edit_229408728907179" src="https://github.com/user-attachments/assets/e65f1f65-63d7-40f5-b023-2e041b411a21" />
-<img width="1920" height="919" alt="Screenshot_20260724_030902_com huawei himovie overseas_edit_229420442995198" src="https://github.com/user-attachments/assets/ffdd127e-3541-4fc7-a1f1-15a246f37901" />
-<img width="730" height="583" alt="Screenshot_20260724_031014_com huawei himovie overseas_edit_229339086841044" src="https://github.com/user-attachments/assets/f908e8bf-7a26-489a-9300-c9fd9d2682e9" />
-<img width="1920" height="1200" alt="Screenshot_20260724_031430_com huawei himovie overseas" src="https://github.com/user-attachments/assets/e914b9f5-657a-4b97-8093-c29919e84e5e" />
-<img width="1920" height="1043" alt="Screenshot_20260724_031640_com huawei himovie overseas_edit_229042115431193" src="https://github.com/user-attachments/assets/e846dc50-19f7-450b-8d33-28b15370eac6" />
-<img width="1920" height="1070" alt="Screenshot_20260724_031610_com huawei himovie overseas_edit_229052003987963" src="https://github.com/user-attachments/assets/5d08ab5a-e2b7-4642-975a-f12c30b0747d" />
-<img width="1079" height="1920" alt="Screenshot_20260724_031953" src="https://github.com/user-attachments/assets/921516f0-0bb6-4d8b-842b-29c64f5d5a80" />
-<img width="1082" height="1141" alt="Screenshot_20260724_031814_1_com huawei himovie overseas_edit_228893864297883" src="https://github.com/user-attachments/assets/5f7578d1-1da6-4623-a192-3d976af015aa" />
-<img width="1200" height="1920" alt="Screenshot_20260724_031812_com huawei himovie overseas" src="https://github.com/user-attachments/assets/37acac23-8345-43a7-930e-928d041af23d" />
-<img width="1920" height="1200" alt="Screenshot_20260724_031751_com huawei himovie overseas" src="https://github.com/user-attachments/assets/64c17d8a-017b-49d9-bb5b-68aa3b0b342a" />
-<img width="1200" height="1551" alt="Screenshot_20260724_031732_com huawei himovie overseas_edit_229006934696824" src="https://github.com/user-attachments/assets/f42a08b6-eef9-411c-887b-aa9f824f5596" />
-<img width="1024" height="1024" alt="1785059352142" src="https://github.com/user-attachments/assets/93b091d8-7269-48ea-8729-54eddd4f82d8" />
-<img width="768" height="1376" alt="1785069920994" src="https://github.com/user-attachments/assets/d8272da7-bc9b-4797-88b2-b08e1c4da706" />
-<img width="1291" height="1722" alt="Photoroom-٢٠٢٦٠٧٢٧_٠٢٥٦٥٣٤٦٧" src="https://github.com/user-attachments/assets/94a6094c-e257-4af1-a6d1-2325f600fd96" />
-<img width="1291" height="1722" alt="Photoroom-٢٠٢٦٠٧٢٧_٠٢٥٦٥٣٤٦٧ (2)" src="https://github.com/user-attachments/assets/3e152380-ac7b-424b-8458-7b506ae21cba" />
-<img width="1080" height="1920" alt="Screenshot_٢٠٢٦٠٧٢٧_٠٢٥١٤٤٩٤٦" src="https://github.com/user-attachments/assets/7969d180-be48-44c3-ac5a-119816beb918" />
-<img width="1080" height="1920" alt="Screenshot_٢٠٢٦٠٧٢٧_٠٢٥١٤٢٠١٨" src="https://github.com/user-attachments/assets/633ed7bc-ce41-471a-b5f7-6c9dd688412d" />
-# https-bin-kalilah-alaamri-catalog.ai.studio-
-Food &amp; Regional Supply Agencies 
+https-bin-kalilah-alaamri-catalog.ai.studio-
+Food & Regional Supply Agencies
